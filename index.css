@@ -1,12 +1,23 @@
+html,
 body {
+    height: 100%;
     background-color: #eeeeee;
+    overflow-y: hidden;
 }
 
 .color {
     flex-grow: 1;
+    height: 50%;
     background-color: attr(data-color);
-    width: 20px;
-    height: 20px;
+}
+
+#game {
+    margin: 0;
+    z-index: 1;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
 }
 
 .hiddenColor {
@@ -14,19 +25,33 @@ body {
 }
 
 #settings {
-    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    overflow-x: hidden;
     background-color: #eeeeee;
 }
 
 #guesses {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 #answer,
 #choices,
-#activeGuess .row {
+#activeGuess,
+#guesses div,
+.row {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
 }
