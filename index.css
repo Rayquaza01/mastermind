@@ -1,0 +1,32 @@
+body {
+    background-color: #eeeeee;
+}
+
+.color {
+    flex-grow: 1;
+    background-color: attr(data-color);
+    width: 20px;
+    height: 20px;
+}
+
+.hiddenColor {
+    background-color: #757575 !important;
+}
+
+#settings {
+    z-index: 1;
+    background-color: #eeeeee;
+}
+
+#guesses {
+    display: flex;
+    flex-direction: column;
+}
+
+#answer,
+#choices,
+#activeGuess .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

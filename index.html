@@ -6,7 +6,20 @@
         <title>Mastermind</title>
     </head>
     <body>
-        <!-- Content -->
+        <div id="settings">
+            <h1>Number of colors</h1>
+            <input id="colorLength"type="number" min=1 default=6>
+            <h1>Length of answer</h1>
+            <input id="length" type="number" min=1 default=6>
+
+            <button id="start">Start!</button>
+        </div>
+        <div id="game">
+            <div id="answer"></div>
+            <div id="choices"></div>
+            <div id="activeGuess"></div>
+            <div id="guesses"></div>
+        </div>
         <script src="index.js"></script>
     </body>
 </html>
