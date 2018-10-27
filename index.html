@@ -3,22 +3,30 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="index.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
         <title>Mastermind</title>
     </head>
     <body>
         <div id="settings">
+            <h1 class="title">Mastermind</h1>
+            <a href="https://github.com/Rayquaza01/mastermind#readme" target="_blank">How to Play</a>
             <h1>Number of Colors in Answer</h1>
             <input id="colorLength"type="number" min=1 value=6>
             <h1>Length of Answer</h1>
             <input id="length" type="number" min=1 value=4>
             <h1>Max Guesses Until Game Over</h1>
             <input id="maxGuess" type="number" min="1" value="12">
-            <br>
             <button id="start">Start!</button>
         </div>
         <div id="game">
+            <div id="header">
+                <span id="timer"></span><button id="reset">New Game</button>
+            </div>
+            Answer:
             <div id="answer"></div>
+            Choices:
             <div id="choices"></div>
+            Guesses:
             <div id="activeGuess"></div>
             <div id="guesses"></div>
         </div>

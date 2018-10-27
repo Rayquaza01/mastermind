@@ -1,18 +1,26 @@
-html,
-body {
+html {
     height: 100%;
     background-color: #eeeeee;
-    overflow-y: hidden;
+    font-family: "Roboto Mono", monospace;
+}
+
+.title {
+    font-size: 100px;
+    margin-bottom: 10px;
 }
 
 .color {
     flex-grow: 1;
-    height: 50%;
-    background-color: attr(data-color);
+    margin: 5px;
+    height: 100px;
 }
 
 #game {
-    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#game {
     z-index: 1;
     width: 90%;
     height: 90%;
@@ -25,8 +33,15 @@ body {
 }
 
 #settings {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     position: absolute;
     left: 0;
+    /* text-align: center; */
     top: 0;
     z-index: 2;
     overflow-x: hidden;
@@ -51,7 +66,15 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
-    height: 100%;
-    padding-top: 0;
-    padding-bottom: 0;
+    align-items: center;
+    /* height: 100%; */
+    margin: 5px;
+}
+
+#timer {
+    float: left;
+}
+
+#reset {
+    float: right;
 }
