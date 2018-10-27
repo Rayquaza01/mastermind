@@ -23,3 +23,7 @@ At any point the player may see their previous guesses and pegs.
 Before the game starts, the player may configure the number of colors to choose from (default 6), the length of the code (default 4) and the maximum guesses before game over (default 12);
 
 Changing these numbers can alter the difficulty of the game.
+
+## Acknowledgements
+
+Using Roboto Mono from fonts.google.com
