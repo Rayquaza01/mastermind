@@ -82,12 +82,12 @@ function getPegs(guess, answer) {
 function createPegs(pegs) {
     let ele = document.createElement("div");
     ele.className = "pegs";
-    for (let i = 0; i < pegs.blackpegs; i++) {
-        createColorElement(ele, "#000000", false);
-    }
-    for (let i = 0; i < pegs.whitepegs; i++) {
-        createColorElement(ele, "#FFFFFF", false);
-    }
+    Array.from(Array(pegs.blackpegs), () =>
+        createColorElement(ele, "#000000", false)
+    );
+    Array.from(Array(pegs.whitepegs), () =>
+        createColorElement(ele, "#FFFFFF", false)
+    );
     return ele;
 }
 
@@ -137,17 +137,24 @@ function moveGuess(e) {
 
 function main() {
     reset();
-    for (let i = 0; i < parseInt(DOM.colorLength.value); i++) {
-        // create random colors
-        colors.push(randomColor());
-        createColorElement(DOM.choices, colors[i], false);
-    }
-    for (let i = 0; i < parseInt(DOM.length.value); i++) {
-        // pick random colors from previously generated list to create answer
-        answer.push(colors[Math.floor(Math.random() * colors.length)]);
-        createColorElement(DOM.answer, answer[i], true);
+    // create array with random colors
+    colors = Array.from(Array(parseInt(DOM.colorLength.value)), randomColor);
+
+    colors.forEach(item => {
+        // create color on page
+        createColorElement(DOM.choices, item, false);
+    });
+
+    answer = Array.from(
+        Array(parseInt(DOM.length.value)),
+        () => colors[Math.floor(Math.random() * colors.length)]
+    );
+
+    answer.forEach(item => {
+        createColorElement(DOM.answer, item, true);
         createColorElement(DOM.activeGuess, "#FFFFFF", false);
-    }
+    });
+
     DOM.settings.style.width = "0";
     timer = setInterval(incrementTimer, 1000);
 }
